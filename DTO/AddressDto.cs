@@ -1,4 +1,5 @@
-﻿namespace StudentAPI.DTO
+﻿using StudentAPI.Models;
+namespace StudentAPI.DTO
 {
     public class AddressDto
     {
@@ -9,4 +10,4 @@
         public Guid StudentId { get; set; }
     }
 }
-}
+

@@ -1,4 +1,5 @@
-﻿using StudentAPI.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using StudentAPI.Data;
 using StudentAPI.Models;
 
 namespace StudentAPI.Repository
@@ -14,7 +15,7 @@ namespace StudentAPI.Repository
 
         public List<Student> GetStudents()
         {
-            var students = _context.Students.ToList();
+            var students = _context.Students.Include(x => x.Gender).Include(e => e.Address).ToList();
             return students;
         }
     }
