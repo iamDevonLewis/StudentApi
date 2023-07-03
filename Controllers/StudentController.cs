@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StudentAPI.DTO;
 using StudentAPI.Models;
@@ -8,18 +10,25 @@ namespace StudentAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("angularApp")]
     public class StudentController : ControllerBase
     {
         private readonly IStudentRepository _studentRepository;
+        private readonly IMapper _mapper;
 
-        public StudentController(IStudentRepository studentRepository)
+        public StudentController(IStudentRepository studentRepository, IMapper mapper)
         {
             _studentRepository = studentRepository;
+            _mapper = mapper;
         }
 
-        public IActionResult GetAllStudents()
+        [HttpGet]
+        public async Task<IActionResult> GetAllStudents()
         {
-            var students = _studentRepository.GetStudents();
+            var students = await _studentRepository.GetStudents();
+
+            //AutoMapper
+            //return Ok(_mapper.Map<List<StudentDto>>(students));
 
             var studentDto = new List<StudentDto>();
 

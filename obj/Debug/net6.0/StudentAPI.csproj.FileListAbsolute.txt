@@ -5,6 +5,8 @@ C:\Users\LaunchCode\Desktop\Personal Projects\StudentAPI\StudentAPI\bin\Debug\ne
 C:\Users\LaunchCode\Desktop\Personal Projects\StudentAPI\StudentAPI\bin\Debug\net6.0\StudentAPI.runtimeconfig.json
 C:\Users\LaunchCode\Desktop\Personal Projects\StudentAPI\StudentAPI\bin\Debug\net6.0\StudentAPI.dll
 C:\Users\LaunchCode\Desktop\Personal Projects\StudentAPI\StudentAPI\bin\Debug\net6.0\StudentAPI.pdb
+C:\Users\LaunchCode\Desktop\Personal Projects\StudentAPI\StudentAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\LaunchCode\Desktop\Personal Projects\StudentAPI\StudentAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\LaunchCode\Desktop\Personal Projects\StudentAPI\StudentAPI\bin\Debug\net6.0\Humanizer.dll
 C:\Users\LaunchCode\Desktop\Personal Projects\StudentAPI\StudentAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\LaunchCode\Desktop\Personal Projects\StudentAPI\StudentAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll

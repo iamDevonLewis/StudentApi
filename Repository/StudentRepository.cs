@@ -13,10 +13,11 @@ namespace StudentAPI.Repository
             _context = context;
         }
 
-        public List<Student> GetStudents()
+        public async Task<List<Student>> GetStudents()
         {
-            var students = _context.Students.Include(x => x.Gender).Include(e => e.Address).ToList();
+            var students = await _context.Students.Include(x => x.Gender).Include(e => e.Address).ToListAsync();
             return students;
         }
+
     }
 }

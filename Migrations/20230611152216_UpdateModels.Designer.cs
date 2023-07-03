@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentAPI.Data;
 
@@ -10,9 +11,11 @@ using StudentAPI.Data;
 namespace StudentAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230611152216_UpdateModels")]
+    partial class UpdateModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,24 +46,6 @@ namespace StudentAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Addresses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("6094c3de-6b72-4927-afb3-9a89d0bcbfa8"),
-                            City = "Saint Louis",
-                            State = "Missouri",
-                            Street = "23 Halls Ferry",
-                            StudentId = new Guid("2e30682f-3937-4d87-bfab-6aae235d9123")
-                        },
-                        new
-                        {
-                            Id = new Guid("17eb6454-b9b0-4c8b-a764-ede233f098a1"),
-                            City = "Saint Louis",
-                            State = "Missouri",
-                            Street = "51 Hazelwood",
-                            StudentId = new Guid("2b107f52-c7b5-4879-a233-bf8805341f58")
-                        });
                 });
 
             modelBuilder.Entity("StudentAPI.Models.Gender", b =>
@@ -76,18 +61,6 @@ namespace StudentAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genders");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("15fe46d3-7de1-43bd-ba1a-a81ab6e56105"),
-                            Description = "Male"
-                        },
-                        new
-                        {
-                            Id = new Guid("8fc6727e-6882-4c86-a5b1-f7ca2e326857"),
-                            Description = "Female"
-                        });
                 });
 
             modelBuilder.Entity("StudentAPI.Models.Student", b =>
@@ -131,32 +104,6 @@ namespace StudentAPI.Migrations
                     b.HasIndex("GenderId");
 
                     b.ToTable("Students");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("2b107f52-c7b5-4879-a233-bf8805341f58"),
-                            AddressId = new Guid("17eb6454-b9b0-4c8b-a764-ede233f098a1"),
-                            DateOfBirth = new DateTime(1990, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "john@yahoo.com",
-                            FirstName = "John",
-                            GenderId = new Guid("15fe46d3-7de1-43bd-ba1a-a81ab6e56105"),
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Jay-Z_%40_Shawn_%27Jay-Z%27_Carter_Foundation_Carnival_%28crop_2%29.jpg/1200px-Jay-Z_%40_Shawn_%27Jay-Z%27_Carter_Foundation_Carnival_%28crop_2%29.jpg",
-                            LastName = "Smith",
-                            PhoneNumber = 411
-                        },
-                        new
-                        {
-                            Id = new Guid("2e30682f-3937-4d87-bfab-6aae235d9123"),
-                            AddressId = new Guid("6094c3de-6b72-4927-afb3-9a89d0bcbfa8"),
-                            DateOfBirth = new DateTime(2000, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "whitney@yahoo.com",
-                            FirstName = "Whitney",
-                            GenderId = new Guid("8fc6727e-6882-4c86-a5b1-f7ca2e326857"),
-                            ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/5/52/Whitney_Houston_%28cropped3%29.JPEG",
-                            LastName = "Houston",
-                            PhoneNumber = 511
-                        });
                 });
 
             modelBuilder.Entity("StudentAPI.Models.Student", b =>
