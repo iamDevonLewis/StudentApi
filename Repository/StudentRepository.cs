@@ -19,5 +19,11 @@ namespace StudentAPI.Repository
             return students;
         }
 
+        public async Task<Student> GetStudent(Guid id)
+        {
+            var student = await _context.Students.Include(x => x.Gender).Include(e => e.Address).FirstOrDefaultAsync(x => x.Id == id);
+            return student;
+        }
+
     }
 }
